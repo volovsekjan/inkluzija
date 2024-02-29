@@ -1,0 +1,661 @@
+
+body {
+  font-family: 'Open Sans', serif;
+  padding-top: 54px;
+  color: #868e96; }
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 0;
+    padding-left: 17rem; } }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Saira Extra Condensed', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #343a40; }
+
+h1 {
+  font-size: 6rem;
+  line-height: 5.5rem; }
+
+h2 {
+  font-size: 3.5rem; }
+
+.subheading {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Saira Extra Condensed', serif;
+  font-size: 1.35rem; }
+
+.list-social-icons a {
+  color: #495057; }
+  .list-social-icons a:hover {
+    color: #BD5D38; }
+  .list-social-icons a .fa-lg {
+    font-size: 1.75rem; }
+
+.list-icons {
+  font-size: 3rem; }
+  .list-icons .list-inline-item i:hover {
+    color: #BD5D38; }
+
+#sideNav .navbar-nav .nav-item .nav-link {
+  font-weight: 600;
+  text-transform: uppercase; }
+
+@media (min-width: 992px) {
+  #sideNav {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    height: 100vh; }
+    #sideNav .navbar-brand {
+      display: flex;
+      margin: auto auto 0;
+      padding: 0.5rem; }
+      #sideNav .navbar-brand .img-profile {
+        max-width: 12.2rem;
+        max-height: 12.2rem;
+        border: 0.5rem solid rgba(255, 255, 255, 0.2); }
+    #sideNav .navbar-collapse {
+      display: flex;
+      align-items: flex-start;
+      flex-grow: 0;
+      width: 100%;
+      margin-bottom: auto; }
+      #sideNav .navbar-collapse .navbar-nav {
+        flex-direction: column;
+        width: 100%; }
+        #sideNav .navbar-collapse .navbar-nav .nav-item {
+          display: block; }
+          #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+            display: block; } }
+
+section.resume-section {
+  border-bottom: 1px solid #dee2e6;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important; }
+  section.resume-section .resume-item .resume-date {
+    min-width: none; }
+
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: 100vh; }
+    section.resume-section .resume-item .resume-date {
+      min-width: 18rem; } }
+
+@media (min-width: 992px) {
+  section.resume-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important; } }
+
+.bg-primary {
+  background-color: #78a7eb !important; }
+
+.text-primary {
+  color: #78a7eb !important; }
+
+a {
+  color: #78a7eb; }
+  a:hover, a:focus, a:active {
+    color: #5078af; }
+
+
+
+/*//////////////////// FACEBOOK IKONA ////////////////////*/
+
+.facebook-link {
+  color: #2f55b7; /* Initial color, adjust as needed */
+  text-decoration: none; /* Removes underline from links */
+  display: inline-flex; /* Aligns the icon and text */
+  align-items: center; /* Centers items vertically */
+  gap: 15px; /* Adjusts space between icon and text */
+  font-family: 'Saira Extra Condensed', serif;
+  font-size: 40px; /* Increased text size */  
+  font-weight: 500;
+  transition: color 0.05s ease-in-out; /* Adds transition effect */
+  margin-top: 1%;
+}
+
+.facebook-link:hover {
+  color: #78a7eb; /* Darker color on hover */
+  text-decoration: none; /* Ensures no underline appears on hover */
+}
+
+.fa-facebook-official {
+  font-size: 60px; /* Increased icon size */
+  transition: color 0.05s ease-in-out; /* This line is optional, only if you want the icon color to transition */
+}
+
+
+
+/*//////////////////// CAROSEL SLIDER ////////////////////*/
+
+@media (min-width: 992px) {
+  /* Prilagoditve za puščice carousel-a */
+  .carousel-control-prev, .carousel-control-next {
+    top: calc(50% - 25px); /* Centriranje puščic po višini, 50% od vrha minus polovica višine puščice */
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Example shadow */
+  transition: 0.3s; /* Smooth transition for hover effect */
+  padding: 16px; /* Padding inside the card */
+  margin: 16px auto; /* Margin around the card, centered horizontally */
+  background: #fff; /* Background color of the card */
+  border-radius: 5px; /* Rounded corners for the card */
+  width: 800px; /* Fixed width */
+  height: 400px; /* Fixed height */
+  display: flex; /* Enables flexbox layout */
+  flex-direction: column; /* Stack card content vertically */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  text-align: center; /* Ensures text is centered */
+  overflow: hidden; /* Hides overflowing content */
+}
+
+.card-title{
+  margin-bottom: 2%;
+  font-size: 34px;
+  padding: 10px;
+  font-weight: 630;
+  font-family: 'Saira Extra Condensed', serif;
+  color: #3c454e;
+  text-transform: uppercase; /* Ta vrstica spremeni vse črke v velike */
+}
+
+.card-text{
+  padding: 10px;
+  
+}
+
+.card .button-container {
+  margin-top: 6%;
+  display: flex; /* This will align child buttons next to each other */
+  justify-content: center; /* This will center the buttons in the container */
+  gap: 27px; /* This adds some space between your buttons */
+}
+
+/* Slog za gumbe znotraj .button-container */
+.card .button-container .button-style {
+  transition: background-color 0.3s ease, color 0.3s ease; /* Animacija za gladke prehode */
+}
+
+/* Slog za hover stanje gumbov */
+.card .button-container .button-style:hover {
+  background-color: #5078af; /* Svetlejša modra barva za ozadje na hover */
+  color: #fff; /* Bela barva besedila na hover */
+  /* Dodajte druge stilizacije, če želite, kot so spremembe obrobe ali sence */
+}
+
+.carousel-item .card {
+  height: 440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.carousel-indicators-custom {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.indicator {
+  width: 30px; /* Širina črte */
+  height: 4px; /* Višina črte */
+  background-color: #ccc; /* Svetlo siva za neaktivne */
+  margin: 0 5px; /* Razmik med indikatorji */
+  transition: background-color 0.3s ease; /* Gladka sprememba barve */
+}
+
+.indicator.active {
+  background-color: #78a7eb; /* Svetlo modra za aktivni indikator */
+}
+
+/* Custom carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+    font-size: 24px; /* Adjust the size of the arrow as needed */
+    width: 50px; /* Width of the control button */
+    height: 50px; /* Height of the control button */
+    line-height: 50px; /* Center the arrow vertically */
+    text-align: center; /* Center the arrow horizontally */
+    background-color: #495057; /* Background color of the buttons */
+    color: white; /* Color of the arrow */
+    border-radius: 50%; /* Circle shape */
+    border: none; /* Remove border */
+}
+
+/* Ensure arrows are visible and properly sized */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #666c72; /* Darker background on hover */
+    color: #ddd; /* Lighter color on hover */
+}
+
+/* Override default carousel control styles */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: none; /* Hide the default background images */
+}
+
+/* Add text shadows for better visibility over images if needed */
+.carousel-control-prev,
+.carousel-control-next {
+    text-shadow: 0 0 3px rgba(0,0,0,0.6);
+}
+
+
+/* Medijska poizvedba za naprave z manj kot 768px širine */
+@media (max-width: 768px) {
+  /* Prilagodi širino kartic */
+  .card {
+    width: auto; /* Naredi širino kartice avtomatsko */
+    max-width: 100%; /* Omeji maksimalno širino */
+    height: auto; /* Prilagodi višino */
+    margin: 8px; /* Manjša zunajna odmika */
+    padding: 25px;
+  }
+
+  .carousel-indicators-custom {
+    position: absolute;
+    bottom: 100%; /* Adjust this so it sits right above the card */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 20px; /* Space between indicators and card */
+  }
+
+  section.resume-section {
+   border-bottom: 1px solid #ffffff; 
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+  
+  /* Prilagodi puščice za drsnik */
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: absolute; /* Absolutno pozicioniranje glede na najbližjega relativno pozicioniranega prednika */
+    top: auto; /* Prestavi gumbe nad vrh kartice; prilagodi glede na dejansko višino gumbov */
+    z-index: 10; /* Zagotovi, da bodo gumbi nad ostalimi elementi */
+    bottom: -50px;
+    background: none; /* Odstrani ozadje, če je potrebno */
+    width: 30px; /* Širina gumbov */
+    height: 30px; /* Višina gumbov */
+    color: #78a7eb; /* Barva ikone, prilagodi po želji */
+    border: none; /* Odstrani obrobo, če je potrebno */
+  }
+  
+  /* Prilagodi položaj puščic */
+  .carousel-control-prev {
+    left: 40%; /* Manjši odmik od levega roba */
+  }
+
+  .carousel-control-next {
+    right: 40%; /* Manjši odmik od desnega roba */
+  }
+  
+  /* Skrij carousel indikatorje na mobilnih napravah */
+  .carousel-indicators {
+    display: none;
+  }
+
+  .carousel-item .card {
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Prilagodi velikost pisave za vsebino kartice */
+  .card p {
+    font-size: 14px; /* Nastavi želeno velikost pisave */
+  }
+
+  /* Prilagodi velikost pisave za naslov kartice, če obstaja */
+  .card .card-title {
+    font-size: 22px; /* Nastavi želeno velikost pisave za naslov */
+  }
+
+  /* Prilagodi velikost pisave za podnaslove ali druge elemente, če obstajajo */
+  .card .card-subtitle,
+  .card .card-text {
+    font-size: 15px; /* Nastavi želeno velikost pisave za podnaslove ali dodatno besedilo */
+  }
+
+  /* Prilagodi velikost pisave za naslov sekcije, če obstaja */
+  .subheading {
+    font-size: 18px; /* Nastavi manjšo velikost pisave za podnaslove v sekciji */
+  }
+
+  /* Prilagodi velikost pisave za druge elemente po potrebi */
+  .other-class {
+    font-size: 12px; /* Nastavi želeno velikost pisave za druge elemente */
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column; /* Postavi elemente vertikalno */
+    align-items: center; /* Poravna gumbe na sredino */
+  }
+
+  /* Manjša velikost gumbov in prilagoditve za mobilne naprave */
+  .button-container .button-style {
+    padding: 5px 10px; /* Manjši notranji rob */
+    font-size: 12px; /* Manjša velikost pisave na gumbih */
+    margin: 5px 0; /* Manjši zunanji rob za vrh in dno gumba */
+  }
+
+  /* Po potrebi prilagodi širino gumbov */
+  .button-container .button-style {
+    width: 100%; /* Manjša širina gumbov glede na vsebnik */
+    max-width: 200px; /* Omeji maksimalno širino, da se prepreči prevelika širina na večjih zaslonih */
+  }
+
+    .openPdfBtn {
+    display: none !important;
+  }
+
+  .openImageBtn {
+    display: none !important;
+  }
+}
+
+
+
+/*//////////////////// BOX INFO CONTAINER ////////////////////*/
+
+.info-box-container {
+  display: flex;
+  flex-direction: column !important; /* Stack them on top of each other by default */
+  align-items: left;
+  justify-content: space-around; /* Space them out evenly */
+}
+
+.info-box {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-left: 5px solid #78a7eb; /* Red bar on the left side */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.info-box h3 {
+  color: #333;
+  margin-bottom: 0.3rem;
+  font-size: 34px;
+}
+
+.info-box p {
+  color: #666;
+  margin-bottom: 0.3rem;
+  font-size: 19px;
+}
+
+@media (min-width: 768px) {
+  /* When the screen is medium or larger, set them side by side */
+  .info-box-container {
+    flex-direction: row;
+  }
+  .info-box {
+    margin-top: 1.5%;
+    width: 100%; /* Full width by default */
+    margin-bottom: 1rem;
+    padding: 1.7rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-left: 5px solid #78a7eb;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+ 
+}
+
+
+
+/*//////////////////// FOOTER ////////////////////*/
+
+footer {
+  background-color: #f1f1f1; /* Svetlo siva barva ozadja */
+  color: #333; /* Temno siva barva teksta */
+  padding: 20px 0; /* Zgornji in spodnji odmik */
+  font-size: 16px; /* Velikost pisave */
+
+}
+
+footer p {
+  margin: 0; /* Odstrani privzeti odmik */
+  padding: 0; /* Odstrani privzeto polnjenje */
+}
+
+.highlight {
+  color: #78a7eb; /* Ali katerokoli drugo barvo, ki jo želite */
+}
+
+
+
+/*///////////////////////// GUMB ///////////////////////////*/
+
+.button-style {
+  padding: 10px 20px;
+  background-color: #78a7eb; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.button-style1 {
+  padding: 10px 20px;
+  background-color: #78a7eb; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.button-style1:hover {
+  background-color: #5678a7; /* Darker background color on hover */
+  /* Add other hover styles if needed */
+}
+
+.loader {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: spin 2s linear infinite;
+  display: inline-block; /* To ensure it aligns nicely with the button text */
+  vertical-align: middle; /* Align the loader vertically */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none; /* Hide the loader initially */
+}
+
+
+ 
+/*//////////////////////// NAV BAR TEXT ////////////////////////////*/
+
+.nav-besedilo {
+  font-size: 22px;
+}
+
+.inkluzija-naslov {
+  font-weight: 600;
+}
+
+.pod-naslov {
+  font-size: 33px;
+  font-weight: 500;
+  font-family: 'Saira Extra Condensed', serif;
+  color: #868e96;
+  text-transform: uppercase; /* Ta vrstica spremeni vse črke v velike */
+}
+
+.tekst{
+  font-size: 18px;
+}
+
+.navbar-darkened {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* ali kakršnakoli stopnja zatemnitve */
+}
+
+
+/*///////////////////////// PDF MODAL ///////////////////////////*/
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1050; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed; /* Stay in place */
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: calc(100vw - 17rem); /* Full width minus the sidebar width */
+  height: calc(100vh);
+  overflow: auto; /* Enable scroll if needed */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin-left: 17rem; /* Width of the sidebar */
+  top: 0;
+  padding-right: 35px;
+}
+
+/* The Close Button */
+.close {
+  margin-top: -1%;
+  color: #aaaaaa;
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 3px;
+
+}
+
+.close:hover,
+.close:focus {
+  color: #c02323;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Style for iframe and img tags within modal for better responsiveness */
+.modal-content iframe,
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 992px) {
+  .modal-content {
+    width: 100vw; /* Full width on smaller screens */
+    margin-left: 0; /* No sidebar on smaller screens */
+  }
+}
+
+
+
+/*//////////////////////// IMAGE MODAL ///////////////////////////*/
+
+.image-modal {
+  display: none; /* Skrit po defaultu */
+  position: fixed; /* Ostane na mestu */
+  z-index: 1051; /* Da se zagotovi, da je nad drugimi elementi */
+  left: 17rem; /* Širina vaše leve navigacije */
+  top: 0;
+  right: 0; /* Zagotavlja, da se razteza do desnega roba */
+  bottom: 0; /* Zagotavlja, da se razteza do dna */
+  background-color: rgba(0,0,0,0.8); /* Pol-prosojna črna za ozadje */
+}
+
+.image-modal-content {
+  position: absolute; /* Absolutno pozicioniranje znotraj modala */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centriranje vsebine */
+  width: auto; /* Avtomatska širina glede na vsebino */
+  max-width: calc(100% - 17rem); /* Maksimalna širina ob upoštevanju leve navigacije */
+  height: auto; /* Avtomatska višina glede na vsebino */
+  max-height: 100%; /* Omejitev višine */
+  padding: 1rem; /* Notranji razmik */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Senca za boljši občutek globine */
+  overflow: auto; /* Omogoča skrolanje, če je slika prevelika */
+}
+
+.image-close {
+  position: absolute;
+  left: 2rem;
+  top: 1%;
+  color: #f04545; /* Better visibility */
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1052; /* Ensure it's above the modal content */
+}
+
+.image-close:hover {
+  color: #c93737; /* Svetlejša rdeča za hover stanje */
+}
+
+
+.image-modal img {
+  width: 100%; /* Slika se razteza na celotno širino */
+  height: auto; /* Ohranjanje razmerij slike */
+  border-radius: 0.25rem; /* Rahlo zaobljeni robovi slike */
+}
+
+@media screen and (max-width: 700px){
+  .image-modal-content {
+    width: 100%;
+  }
+}
+
+
+
+/*//////////////////////////////////////////////////////////*/
