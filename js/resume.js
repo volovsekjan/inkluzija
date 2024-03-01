@@ -80,7 +80,7 @@
     // Simulate file download action
     setTimeout(function() {
       $this.html($this.data('original-text')); // Restore the original button text
-    }, 3000); // Simulate a 3 second loading time
+    }, 2500); // Simulate a 3 second loading time
   });
 
   window.downloadFile = function(filePath) {
@@ -91,5 +91,17 @@
     downloadLink.click();
     document.body.removeChild(downloadLink);
   };
+
+  // Swipe functionality for Carousel
+  $(".carousel").each(function() {
+    var $carousel = $(this);
+    var hammer = new Hammer(this);
+    hammer.on('swipeleft', function() {
+      $carousel.carousel('next');
+    });
+    hammer.on('swiperight', function() {
+      $carousel.carousel('prev');
+    });
+  });
 
 })(jQuery);

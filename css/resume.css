@@ -156,7 +156,7 @@ a {
   background: #fff; /* Background color of the card */
   border-radius: 5px; /* Rounded corners for the card */
   width: 800px; /* Fixed width */
-  height: 400px; /* Fixed height */
+  height: 500px; /* Fixed height */
   display: flex; /* Enables flexbox layout */
   flex-direction: column; /* Stack card content vertically */
   justify-content: center; /* Centers content horizontally */
@@ -200,7 +200,7 @@ a {
 }
 
 .carousel-item .card {
-  height: 440px;
+  height: 460px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,7 +218,7 @@ a {
   height: 4px; /* Višina črte */
   background-color: #ccc; /* Svetlo siva za neaktivne */
   margin: 0 5px; /* Razmik med indikatorji */
-  transition: background-color 0.3s ease; /* Gladka sprememba barve */
+  transition: background-color 0.3s ease; /* Gladka sprememba barve */ 
 }
 
 .indicator.active {
@@ -237,6 +237,7 @@ a {
     color: white; /* Color of the arrow */
     border-radius: 50%; /* Circle shape */
     border: none; /* Remove border */
+    text-shadow: 0 0 3px rgba(0,0,0,0.6);
 }
 
 /* Ensure arrows are visible and properly sized */
@@ -252,11 +253,7 @@ a {
     display: none; /* Hide the default background images */
 }
 
-/* Add text shadows for better visibility over images if needed */
-.carousel-control-prev,
-.carousel-control-next {
-    text-shadow: 0 0 3px rgba(0,0,0,0.6);
-}
+
 
 
 /* Medijska poizvedba za naprave z manj kot 768px širine */
@@ -268,6 +265,17 @@ a {
     height: auto; /* Prilagodi višino */
     margin: 8px; /* Manjša zunajna odmika */
     padding: 25px;
+    margin-bottom: 40px; /* Povečajte razmik na želeno vrednost */
+    position: relative; /* Nastavi kartico kot referenčno točko za absolutno pozicionirane elemente znotraj nje */
+    padding-bottom: 60px; /* Dodajte dodatni prostor na dnu kartice, da se gumbi ne prekrivajo z vsebino */
+  }
+
+  .card .card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertikalno centriranje */
+    height: 100%; /* Vzemi celotno višino kartice */
+    padding: 10px; /* Ohrani nekaj notranjega prostora */
   }
 
   .carousel-indicators-custom {
@@ -278,7 +286,7 @@ a {
     display: flex;
     justify-content: center;
     padding: 0;
-    margin-bottom: 20px; /* Space between indicators and card */
+    margin-bottom: 30px; /* Space between indicators and card */
   }
 
   section.resume-section {
@@ -295,19 +303,19 @@ a {
     z-index: 10; /* Zagotovi, da bodo gumbi nad ostalimi elementi */
     bottom: -50px;
     background: none; /* Odstrani ozadje, če je potrebno */
-    width: 30px; /* Širina gumbov */
-    height: 30px; /* Višina gumbov */
+    width: 50px; /* Širina gumbov */
+    height: 50px; /* Višina gumbov */
     color: #78a7eb; /* Barva ikone, prilagodi po želji */
     border: none; /* Odstrani obrobo, če je potrebno */
   }
   
   /* Prilagodi položaj puščic */
   .carousel-control-prev {
-    left: 40%; /* Manjši odmik od levega roba */
+    left: 31%; /* Manjši odmik od levega roba */
   }
 
   .carousel-control-next {
-    right: 40%; /* Manjši odmik od desnega roba */
+    right: 31%; /* Manjši odmik od desnega roba */
   }
   
   /* Skrij carousel indikatorje na mobilnih napravah */
@@ -316,7 +324,7 @@ a {
   }
 
   .carousel-item .card {
-    height: 480px;
+    height: 520px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -330,14 +338,26 @@ a {
 
   /* Prilagodi velikost pisave za naslov kartice, če obstaja */
   .card .card-title {
-    font-size: 22px; /* Nastavi želeno velikost pisave za naslov */
+    font-size: 26px; /* obstoječa nastavitev velikosti pisave */
+    line-height: 1.1; /* Primer zmanjšanega razmika med vrsticami */
   }
+
+  .card .card-title {
+    position: absolute; /* Absolute position the title */
+    top: 20px; /* Adjust this value as needed to position the title */
+    left: 10px; /* Adjust this value to align left within the card */
+    width: calc(100% - 20px); /* Adjust the width of the title to fit within the card with padding */
+    margin-bottom: 0; /* Remove margin bottom to stick the title to the top */
+  }
+  
 
   /* Prilagodi velikost pisave za podnaslove ali druge elemente, če obstajajo */
   .card .card-subtitle,
   .card .card-text {
     font-size: 15px; /* Nastavi želeno velikost pisave za podnaslove ali dodatno besedilo */
   }
+
+  
 
   /* Prilagodi velikost pisave za naslov sekcije, če obstaja */
   .subheading {
@@ -357,15 +377,21 @@ a {
 
   /* Manjša velikost gumbov in prilagoditve za mobilne naprave */
   .button-container .button-style {
-    padding: 5px 10px; /* Manjši notranji rob */
-    font-size: 12px; /* Manjša velikost pisave na gumbih */
+    padding: 10px 25px; /* Manjši notranji rob */
+    font-size: 14px; /* Manjša velikost pisave na gumbih */
     margin: 5px 0; /* Manjši zunanji rob za vrh in dno gumba */
+    margin-bottom: 20px;
   }
 
   /* Po potrebi prilagodi širino gumbov */
-  .button-container .button-style {
-    width: 100%; /* Manjša širina gumbov glede na vsebnik */
-    max-width: 200px; /* Omeji maksimalno širino, da se prepreči prevelika širina na večjih zaslonih */
+
+
+  .card .button-container {
+    position: absolute; /* Absolutno pozicioniranje gumbom glede na najbližji relativno pozicioniran prednik element, ki je .card */
+    bottom: 10px; /* Določite razdaljo od spodnjega roba kartice */
+    left: 0; /* Poravnavanje z levo stranjo kartice */
+    width: 100%; /* Širina gumbom nastavljena na širino kartice */
+    justify-content: center; /* Center buttons horizontally if they are in a flex container */
   }
 
     .openPdfBtn {
@@ -374,6 +400,68 @@ a {
 
   .openImageBtn {
     display: none !important;
+  }
+
+
+  .facebook-link {
+    color: #2f55b7;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Saira Extra Condensed', serif;
+    font-size: 34px;
+    font-weight: 500;
+    transition: color 0.05s ease-in-out;
+    margin-top: 1%;
+}
+
+
+
+.pod-naslov {
+  font-size: 33px;
+  font-weight: 500;
+  font-family: 'Saira Extra Condensed', serif;
+  color: #868e96;
+  text-transform: uppercase;
+}
+
+.glavni-naslov{
+  margin-top: -30px;
+}
+
+}
+
+
+/* Medijske poizvedbe za prilagajanje velikosti pisave glede na širino naprave */
+@media (max-width: 768px) {
+  .card .card-text {
+    font-size: 15px; /* Manjša velikost za mobilne naprave */
+  }
+
+  .carousel-item .card {
+    height: 560px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card .card-title{
+    font-size: 23px;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card .card-text {
+    font-size: 16px; /* Srednja velikost za tablice */
+  }
+}
+
+@media (min-width: 1025px) {
+  .card .card-text {
+    font-size: 18px; /* Standardna velikost za namizne računalnike */
   }
 }
 
@@ -659,3 +747,5 @@ footer p {
 
 
 /*//////////////////////////////////////////////////////////*/
+
+
