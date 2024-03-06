@@ -424,6 +424,7 @@ a {
   font-family: 'Saira Extra Condensed', serif;
   color: #868e96;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 
 .glavni-naslov{
@@ -431,6 +432,7 @@ a {
 }
 
 }
+
 
 
 /* Medijske poizvedbe za prilagajanje velikosti pisave glede na širino naprave */
