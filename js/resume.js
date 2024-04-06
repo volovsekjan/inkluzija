@@ -104,4 +104,20 @@
     });
   });
 
+
+  $(document).ready(function() {
+    // Check if the device width is less than 768 pixels
+    if(window.innerWidth < 768) {
+      // Show the loading screen on mobile devices
+      $('#loadingScreen').show();
+  
+      // Hide the loading screen after 2 seconds
+      setTimeout(function() {
+        $('#loadingScreen').fadeOut('slow');
+      }, 2200); // 2000 milliseconds = 2 seconds
+    }
+  });
+  
+  
+
 })(jQuery);
