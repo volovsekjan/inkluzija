@@ -114,7 +114,7 @@
       // Hide the loading screen after 2 seconds
       setTimeout(function() {
         $('#loadingScreen').fadeOut('slow');
-      }, 2200); // 2000 milliseconds = 2 seconds
+      }, 2500); // 2500 milliseconds = 2.5 seconds
     }
   });
   
