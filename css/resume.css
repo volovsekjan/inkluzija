@@ -355,7 +355,7 @@ section.resume-section-zastopniki {
   
   /* Skrij carousel indikatorje na mobilnih napravah */
   .carousel-indicators {
-    display: none;
+    display: none !important;
   }
 
   .carousel-item .card {
