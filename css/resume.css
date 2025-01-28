@@ -803,6 +803,13 @@ footer p {
   }
 }
 
+@media (max-width: 768px) {
+  .carousel-indicators {
+    display: none !important;
+  }
+}
+
+
 
 
 /*//////////////////////////////////////////////////////////*/

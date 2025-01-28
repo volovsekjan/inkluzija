@@ -42,8 +42,8 @@
   $(window).on('click', function(event) {
     if ($(event.target).is('.modal')) {
       $('.modal').hide();
-      $('#pdfFrame').attr('src', ''); // Optionally clear the iframe src
-      $('#imageFrame').attr('src', ''); // Optionally clear the image src
+      $('#pdfFrame').attr('src', '');
+      $('#imageFrame').attr('src', '');
     }
   });
 
@@ -59,47 +59,35 @@
     $('#imageModal').hide();
   });
 
-  // Carousel
+  // Hide carousel indicators on mobile devices (width < 768px)
+  function toggleCarouselIndicators() {
+    if ($(window).width() < 768) {
+      $(".carousel-indicators").hide(); // Skrije indikatorje na mobilnih napravah
+    } else {
+      $(".carousel-indicators").show(); // Prikaže indikatorje na večjih zaslonih
+    }
+  }
+
+  // Kliče funkcijo ob inicializaciji in pri spremembi velikosti zaslona
+  $(document).ready(function() {
+    toggleCarouselIndicators();
+    $(window).resize(toggleCarouselIndicators);
+  });
+
+  // Clickable indicators to navigate to specific slide
+  $(".carousel-indicators li").click(function() {
+    var slideTo = $(this).data("slide-to");
+    $("#carouselExperience").carousel(slideTo);
+  });
+
+  // Update active indicator styling on slide change
   $('#carouselExperience').on('slide.bs.carousel', function (e) {
-    var activeIndex = $(e.relatedTarget).index(); // Pridobi indeks naslednjega elementa
-    var $indicators = $('.carousel-indicators-custom .indicator');
-
-    $indicators.removeClass('active'); // Odstrani aktivni razred od vseh
-    $indicators.eq(activeIndex).addClass('active'); // Aktiviraj naslednji indikator
-
-    // Pospeši animacijo indikatorja (doda transition, če je potrebno)
-    $indicators.css({
-      transition: 'background-color 0.2s ease'
-    });
+    var activeIndex = $(e.relatedTarget).index();
+    $('.carousel-indicators li').removeClass('active');
+    $('.carousel-indicators li').eq(activeIndex).addClass('active');
   });
 
-  $('.carousel-control-prev, .carousel-control-next').click(function() {
-    $(this).blur();
-  });
-
-  // Download button logic with loading effect
-  $('.btn.button-style').on('click', function() {
-    var $this = $(this); // Store the button clicked
-    var loadingText = '<i class="fa fa-circle-o-notch fa-spin"></i> Loading...'; // Loading text with spinner icon
-    $this.data('original-text', $this.html()); // Save the original button text
-    $this.html(loadingText); // Change the button text to loading
-
-    // Simulate file download action
-    setTimeout(function() {
-      $this.html($this.data('original-text')); // Restore the original button text
-    }, 2500); // Simulate a 2.5 second loading time
-  });
-
-  window.downloadFile = function(filePath) {
-    var downloadLink = document.createElement('a');
-    downloadLink.href = filePath;
-    downloadLink.download = filePath.split('/').pop();
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
-  };
-
-  // Swipe functionality for Carousel
+  // Swipe functionality for Carousel using Hammer.js
   $(".carousel").each(function() {
     var $carousel = $(this);
     var hammer = new Hammer(this);
@@ -111,16 +99,14 @@
     });
   });
 
+  // Loading screen logic (only for mobile devices)
   $(document).ready(function() {
-    // Check if the device width is less than 768 pixels
-    if(window.innerWidth < 768) {
-      // Show the loading screen on mobile devices
+    if (window.innerWidth < 768) {
       $('#loadingScreen').show();
-
-      // Hide the loading screen after 2 seconds
       setTimeout(function() {
         $('#loadingScreen').fadeOut('slow');
-      }, 2500); // 2500 milliseconds = 2.5 seconds
+      }, 2500);
     }
   });
+
 })(jQuery);
