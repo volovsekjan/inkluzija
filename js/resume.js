@@ -60,10 +60,17 @@
   });
 
   // Carousel
-  $('#carouselExperience').on('slid.bs.carousel', function (e) {
-    var activeIndex = $(e.relatedTarget).index(); // Pridobi indeks trenutno aktivnega elementa
-    $('.carousel-indicators-custom .indicator').removeClass('active'); // Odstrani aktivni razred od vseh
-    $('.carousel-indicators-custom .indicator').eq(activeIndex).addClass('active'); // Doda aktivni razred trenutnemu
+  $('#carouselExperience').on('slide.bs.carousel', function (e) {
+    var activeIndex = $(e.relatedTarget).index(); // Pridobi indeks naslednjega elementa
+    var $indicators = $('.carousel-indicators-custom .indicator');
+
+    $indicators.removeClass('active'); // Odstrani aktivni razred od vseh
+    $indicators.eq(activeIndex).addClass('active'); // Aktiviraj naslednji indikator
+
+    // Pospeši animacijo indikatorja (doda transition, če je potrebno)
+    $indicators.css({
+      transition: 'background-color 0.2s ease'
+    });
   });
 
   $('.carousel-control-prev, .carousel-control-next').click(function() {
@@ -80,7 +87,7 @@
     // Simulate file download action
     setTimeout(function() {
       $this.html($this.data('original-text')); // Restore the original button text
-    }, 2500); // Simulate a 3 second loading time
+    }, 2500); // Simulate a 2.5 second loading time
   });
 
   window.downloadFile = function(filePath) {
@@ -104,20 +111,16 @@
     });
   });
 
-
   $(document).ready(function() {
     // Check if the device width is less than 768 pixels
     if(window.innerWidth < 768) {
       // Show the loading screen on mobile devices
       $('#loadingScreen').show();
-  
+
       // Hide the loading screen after 2 seconds
       setTimeout(function() {
         $('#loadingScreen').fadeOut('slow');
       }, 2500); // 2500 milliseconds = 2.5 seconds
     }
   });
-  
-  
-
 })(jQuery);
