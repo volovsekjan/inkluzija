@@ -821,11 +821,5 @@ footer p {
 }
 
 
-.button-style:focus, .button-style:active {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-
 
 /*//////////////////////////////////////////////////////////*/
