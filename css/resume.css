@@ -82,8 +82,8 @@ h2 {
 
 section.resume-section {
   border-bottom: 1px solid #dee2e6;
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important; }
+  padding-top: 3rem !important;
+  padding-bottom: 0.1rem !important; }
   section.resume-section .resume-item .resume-date {
     min-width: none; }
 
@@ -320,14 +320,22 @@ a {
 
   section.resume-section {
    border-bottom: 1px solid #ffffff; 
-    padding-top: 5rem !important;
-    padding-bottom: 1.5rem !important;
+    padding-top: 4rem !important;
+    padding-bottom: 1rem !important;
 }
 
 section.resume-section-zastopniki {
-  padding-top: 8rem !important;
+  padding-top: 6rem !important;
 }
   
+
+@media (max-width: 768px) {
+  .indicator {
+    width: 15px; /* Manjša širina */
+    height: 3px; /* Manjša višina */
+    margin: 0 2px; /* Manjši razmak */
+  }
+}
   /* Prilagodi puščice za drsnik */
   .carousel-control-prev,
   .carousel-control-next {
@@ -489,13 +497,16 @@ section.resume-section-zastopniki {
     align-items: center; /* Centers content vertically */
     text-align: center; /* Ensures text is centered */
     overflow: hidden; /* Hides overflowing content */
+    height: auto !important; /* Dovoli kartici, da se prilagodi vsebini */
+    min-height: 450px; /* Nastavi minimalno višino */
+    padding: 20px; /* Manjši padding za več prostora */
   }
 
 
 
 
   .card .card-text {
-    font-size: 15px; /* Manjša velikost za mobilne naprave */
+    font-size: 16px; /* Manjša velikost za mobilne naprave */
   }
 
   .carousel-item .card {
