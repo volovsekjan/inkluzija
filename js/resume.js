@@ -123,4 +123,4 @@
       }, 2500); // 2500 milliseconds = 2.5 seconds
     }
   });
-})(jQuery);
+})(jQuery); 

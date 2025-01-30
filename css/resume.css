@@ -518,7 +518,7 @@ section.resume-section-zastopniki {
   }
 
   .card .card-title{
-    font-size: 23px;
+    font-size: 22px;
   }
 
 }
@@ -819,6 +819,13 @@ footer p {
     display: none !important;
   }
 }
+
+
+.button-style:focus, .button-style:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 
 
 /*//////////////////////////////////////////////////////////*/
